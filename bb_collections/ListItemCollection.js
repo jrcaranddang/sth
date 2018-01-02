@@ -8,8 +8,18 @@ var ListItemCollection = Backbone.Collection.extend({
 
 	initialize: function(models, options) {
 		this.total = this.TESTDATA.total;
-		this.post = this.TESTDATA.posts;
+		this.posts = this.TESTDATA.posts;
 		this.reset(this.TESTDATA.posts);
+		console.log(this);
+	},
+
+	approved: function(posts) {
+		return posts.filter(function(post) {
+			// console.log(post);
+			return post.customer_approved > 0;
+			// var itemView = new ListItemView({ model: post });
+			// this.$el.append(itemView.render().el);
+		});
 	}
 
 });

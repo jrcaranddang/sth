@@ -36,7 +36,7 @@ As your interviewer, I want to see and be able to interact with all of the sched
 **Functional Spec**
 
 - General data about the list should be shown somewhere in the container:
-    - Number of total list items
+o    - Number of total list items
     - Number of "approved" posts
         - These are posts with `customer_approved` and `manager_approved` values equal to 1
     - Number of "pending" posts

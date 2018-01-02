@@ -1,0 +1,28 @@
+.ListContainerView {
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    /* grid-template-columns: 25% 25% 25% 25%; */
+}
+
+.ListItemView {
+    display: grid;
+    /* grid-template-rows: 20% 20% 20% 20% 20%; */
+    grid-template-columns: auto 1fr auto auto;
+    grid-gap: 20px;
+}
+
+.id {
+
+}
+
+.message {
+
+}
+
+.network {
+
+}
+
+.schedule {
+
+}

@@ -21,16 +21,19 @@
 
   <!-- Add your Backbone View templates here -->
   <script type='text/template' id='ListContainerView'>
-    <ul>Post:
-      <%= _.map(this.collection.post, function(post) {
-        return `
-          <li>${post.id}</li>\n
-          <li>${post.message}</li>\n
-          <li>${post.network}</li>\n
-          <li>${post.schedule}</li>\n
-        `
-      }) %>
-    </ul>
+    <div class="total">
+      <p>Total: <%- this.collection.total %></p>
+    </div>
+    <div class="approved">
+      
+    </div>
+  </script>
+
+  <script type='text/template' id='ListItemView'>
+    <div class="id"><%- this.model.attributes.id %></div>
+    <div class="message"><%- this.model.attributes.message %></div>
+    <div class="network"><%- this.model.attributes.network %></div>
+    <div class="schedule"><%- this.model.attributes.schedule %></div>
   </script>
   <!-- -->
 
@@ -40,6 +43,7 @@
   <script src="bb_models/ListItemModel.js" type="text/javascript"></script>
   <script src="bb_collections/ListItemCollection.js" type="text/javascript"></script>
   <script src="bb_views/ListContainerView.js" type="text/javascript"></script>
+  <script src="bb_views/ListItemView.js" type="text/javascript"></script>
   <!-- -->
 
 
