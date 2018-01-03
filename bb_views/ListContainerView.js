@@ -5,7 +5,6 @@ var ListContainerView = SOCIView.extend({
 	className: 'ListContainerView',
 
     initialize: function() {
-		console.log(this.approved());
 	},
 	
 	render: function() {

@@ -10,16 +10,34 @@ var ListItemCollection = Backbone.Collection.extend({
 		this.total = this.TESTDATA.total;
 		this.posts = this.TESTDATA.posts;
 		this.reset(this.TESTDATA.posts);
+		console.log(this.where({ customer_approved: 1 }));
 		console.log(this);
+		// console.log('sortBy schedule: ', this.sortPosts(this.posts, 'schedule'));
+		// console.log('sortBy created_at: ', this.sortPosts(this.posts, 'created_at'));
+		// console.log('sortBy created_by_name: ', this.sortPosts(this.posts, 'created_by_name'));
 	},
 
 	approved: function(posts) {
 		return posts.filter(function(post) {
-			// console.log(post);
-			return post.customer_approved > 0;
-			// var itemView = new ListItemView({ model: post });
-			// this.$el.append(itemView.render().el);
+			return post.customer_approved > 0 && post.manager_approved > 0;
 		});
+	},
+
+	pending: function(posts) {
+		return posts.filter(function(post) {
+			return post.customer_approved == 0 || post.manager_approved == 0;
+		});
+	},
+
+	rejected: function(posts) {
+		return posts.filter(function(post) {
+			return post.customer_approved === -1 || post.manager_approved === -1;
+		});
+	},
+
+	sortPosts(posts, type) {
+		console.log("sort by " + type, _.sortBy(posts, type));
+		return _.sortBy(posts, type);
 	}
 
 });

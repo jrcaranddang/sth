@@ -25,7 +25,26 @@
       <p>Total: <%- this.collection.total %></p>
     </div>
     <div class="approved">
-      
+      <p>Approved: <%- this.collection.approved(this.collection.posts).length %></p>
+    </div>
+    </div>
+    <div class="pending">
+      <p>Pending: <%- this.collection.pending(this.collection.posts).length %></p>
+    </div>
+    </div>
+    <div class="rejected">
+      <p>Rejected: <%- this.collection.rejected(this.collection.posts).length %></p>
+    </div>
+    <div class="sortBy">
+      <form id="sortPost">
+        <select name="postCategory" form="sortPost">
+          <option value="schedule">Schedule</option>
+          <option value="created_at">Created At</option>
+          <option value="created_by_name">Created By</option>
+        </select>
+        <button type="submit" onClick="this.collection.sortPosts(postCategory)">Sort
+        </button>
+      </form>
     </div>
   </script>
 

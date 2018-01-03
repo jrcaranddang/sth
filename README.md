@@ -37,11 +37,11 @@ As your interviewer, I want to see and be able to interact with all of the sched
 
 - General data about the list should be shown somewhere in the container:
 o    - Number of total list items
-    - Number of "approved" posts
+o    - Number of "approved" posts
         - These are posts with `customer_approved` and `manager_approved` values equal to 1
-    - Number of "pending" posts
+o    - Number of "pending" posts
         - These are posts with `customer_approved` or `manager_approved` (or both) equal to 0
-    - Number of "rejected" posts
+o    - Number of "rejected" posts
         - These are posts with `customer_approved` or `manager_approved` (or both) equal to -1
 - There should be a PAGED, SORTABLE, SEARCHABLE list of scheduled posts:
     - Assume that you will always have a complete set of local data (don't worry about service calls)
