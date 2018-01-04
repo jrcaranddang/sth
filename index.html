@@ -21,38 +21,67 @@
 
   <!-- Add your Backbone View templates here -->
   <script type='text/template' id='ListContainerView'>
-    <div class="total">
-      <p>Total: <%- this.collection.total %></p>
+    <div class="listHeader">
+      <div class="sortBy">
+          <select  id="sortPost" name="postCategory">
+            <!-- Sort by: -->
+            <option value="" disabled selected>Sort By:</option>
+            <!-- `schedule` date (ascending and descending) -->
+            <option value="schedule">Schedule ↑</option>
+            <option value="schedule">Schedule ↓</option>
+            <!-- `created_at` date (ascending and descending) -->
+            <option value="created_at">Created At ↑</option>
+            <option value="created_at">Created At ↓</option>
+            <!-- `created_by_name` (ascending and descending) -->
+            <option value="created_by_name">Created By ↑</option>
+            <option value="created_by_name">Created By ↓</option>
+          </select>
+      </div>
+      <div class="spacer"></div>
+      <div class="total">
+        <!-- Number of total list items -->
+        <p>Total: <%- this.collection.total %></p>
+      </div>
+      <div class="approved">
+        <!-- Number of "approved" posts -->
+        <p>Approved: <%- this.collection.approved(this.collection.posts).length %></p>
+      </div>
+      <div class="pending">
+        <!-- Number of "pending" posts -->
+        <p>Pending: <%- this.collection.pending(this.collection.posts).length %></p>
+      </div>
+      <div class="rejected">
+        <!-- Number of "rejected" posts -->
+        <p>Rejected: <%- this.collection.rejected(this.collection.posts).length %></p>
+      </div>
     </div>
-    <div class="approved">
-      <p>Approved: <%- this.collection.approved(this.collection.posts).length %></p>
+
+    <div class="listLabels">
+      <p>Id</p>
+      <p>Message</p>
+      <p>Network</p>
+      <p>Date Scheduled</p>
+      <p>Status</p>
     </div>
-    </div>
-    <div class="pending">
-      <p>Pending: <%- this.collection.pending(this.collection.posts).length %></p>
-    </div>
-    </div>
-    <div class="rejected">
-      <p>Rejected: <%- this.collection.rejected(this.collection.posts).length %></p>
-    </div>
-    <div class="sortBy">
-      <form id="sortPost">
-        <select name="postCategory" form="sortPost">
-          <option value="schedule">Schedule</option>
-          <option value="created_at">Created At</option>
-          <option value="created_by_name">Created By</option>
-        </select>
-        <button type="submit" onClick="this.collection.sortPosts(postCategory)">Sort
-        </button>
-      </form>
+
+    <div class="footer">
+      <!-- Next page -->
+      <button class="previous" <% console.log(this) %>>←</button>
+      <!-- Previous page -->
+      <button class="next">→</button>
     </div>
   </script>
 
   <script type='text/template' id='ListItemView'>
     <div class="id"><%- this.model.attributes.id %></div>
-    <div class="message"><%- this.model.attributes.message %></div>
+    <!-- A single-line snippet of the message text -->
+    <div class="message"><%- this.model.attributes.message.slice(0, 90) %></div>
+    <!-- The network TYPE (i.e. facebook) for which the post is scheduled -->
     <div class="network"><%- this.model.attributes.network %></div>
+    <!-- The date/time for which the post is scheduled -->
     <div class="schedule"><%- this.model.attributes.schedule %></div>
+    <!-- Some kind of indication of its approval status -->
+    <div class="status"><%- this.status %></div>
   </script>
   <!-- -->
 
@@ -76,6 +105,15 @@
   </script>
 
 
+  <div class="pageHeader">
+    <h1>SOCi takehome</h1>
+
+    <!-- Search by: -->
+    <div class="searchBar">
+      <input type="text" placeholder="">
+      <button>Search</button>
+    </div>
+  </div>
   <div class="takehome_body">
     <!-- Render your item list here -->
   </div>

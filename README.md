@@ -47,22 +47,22 @@ o    - Number of "rejected" posts
     - Assume that you will always have a complete set of local data (don't worry about service calls)
     - Page limit of 5 items
     - Paging controls:
-        - Next page
-        - Previous page
+o        - Next page
+o        - Previous page
         - Next/Previous buttons should be visible but appear disabled when not applicable (i.e., when on the first or last page)
     - Sort by:
-        - `schedule` date (ascending and descending)
-        - `created_at` date (ascending and descending)
-        - `created_by_name` (ascending and descending)
+x        - `schedule` date (ascending and descending)
+x        - `created_at` date (ascending and descending)
+x        - `created_by_name` (ascending and descending)
     - Search by:
-        - `message` text
-        - `created_by_name`
+x        - `message` text
+x        - `created_by_name`
 - Scheduled Post List Items:
     - Should display at least the following information:
-        - A single-line snippet of the message text
-        - The date/time for which the post is scheduled
-        - The network TYPE (i.e. facebook) for which the post is scheduled
-        - Some kind of indication of its approval status
+o        - A single-line snippet of the message text
+o        - The date/time for which the post is scheduled
+o        - The network TYPE (i.e. facebook) for which the post is scheduled
+o        - Some kind of indication of its approval status
     - Should have the following interactions:
         - "Click" on a list item should bring up a small dialog box showing:
             - The full message text

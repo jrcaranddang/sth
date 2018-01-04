@@ -1,14 +1,42 @@
 .ListContainerView {
     display: grid;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    /* grid-template-columns: 25% 25% 25% 25%; */
+    grid-gap: 20px;
+    padding: 20px;
 }
-
+    
 .ListItemView {
     display: grid;
-    /* grid-template-rows: 20% 20% 20% 20% 20%; */
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: 1rem 1fr 60px 130px 60px;
     grid-gap: 20px;
+}
+
+.listHeader {
+    display: grid;
+    grid-template-columns: auto 1fr repeat(4, auto);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.listLabels {
+    display: grid;
+    grid-template-columns: 1rem 1fr 60px 130px 60px;
+    grid-gap: 20px;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+option[value=""][disabled] {
+    display: none;
 }
 
 .id {
