@@ -45,15 +45,15 @@ o    - Number of "rejected" posts
         - These are posts with `customer_approved` or `manager_approved` (or both) equal to -1
 - There should be a PAGED, SORTABLE, SEARCHABLE list of scheduled posts:
     - Assume that you will always have a complete set of local data (don't worry about service calls)
-    - Page limit of 5 items
+o    - Page limit of 5 items
     - Paging controls:
 o        - Next page
 o        - Previous page
         - Next/Previous buttons should be visible but appear disabled when not applicable (i.e., when on the first or last page)
     - Sort by:
-o        - `schedule` date (ascending and descending)
-o        - `created_at` date (ascending and descending)
-o        - `created_by_name` (ascending and descending)
+x        - `schedule` date (ascending and descending)
+x        - `created_at` date (ascending and descending)
+x        - `created_by_name` (ascending and descending)
     - Search by:
 x        - `message` text
 x        - `created_by_name`

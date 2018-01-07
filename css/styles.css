@@ -1,13 +1,60 @@
-.ListContainerView {
-    display: grid;
-    grid-gap: 20px;
-    padding: 20px;
+body {
+    background-image: url(http://www.meetsoci.com/wp-content/uploads/2016/11/aurora-lights.jpg?id=6330);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 1rem);
+    display: flex;
+    justify-content: center;
 }
-    
-.ListItemView {
-    display: grid;
-    grid-template-columns: 1rem 1fr 60px 130px 60px auto;
-    grid-gap: 20px;
+
+.overlay {
+    background-color: #0DFFF0;
+    opacity: 0.30;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    align-self: center;
+    min-width: 95vw;
+}
+
+.ListContainerView {
+    display: flex;
+    flex-direction: column;
+    min-height: 45vh;
+    padding: 20px;
+    background-color: #f6f6f6;
+    color: #75bc39;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 14px 41px -2px rgba(33,33,33,0.75);
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: #75bc39;
+    color: #fff;
+    border-radius: 10px 10px 0px 0px;
+    background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);
+    background: linear-gradient(to left, #a8e063, #56ab2f);
+}
+
+.logo {
+    padding: 1rem;
+    height: 50px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .listHeader {
@@ -16,27 +63,55 @@
     grid-gap: 20px;
     justify-content: center;
     align-items: center;
+    padding: 0.5rem;
 }
 
 .listLabels {
     display: grid;
     grid-template-columns: 1rem 1fr 60px 130px 60px;
     grid-gap: 20px;
+    margin-right: 28px;
+    text-align: center;
 }
 
-.pageHeader {
-    display: flex;
-    justify-content: space-between;
+.listContainer {
+    min-height: 27vh;
+}
+    
+.ListItemView {
+    display: grid;
+    grid-template-columns: 1rem 1fr 60px 130px 60px auto;
+    grid-gap: 20px;
+    padding: 0.5rem;
 }
 
-.searchBar {
+.footer {
     display: flex;
-    justify-content: center;
+    align-self: flex-end;
     align-items: center;
+    padding: 0.5rem;
+}
+
+.footer > p {
+    margin: 0.5rem;
+}
+
+.footer > button {
+    height: 100%;
+    margin: 0 0.25rem;
+}
+
+select {
+    color: #75bc39;
 }
 
 option[value=""][disabled] {
     display: none;
+}
+
+.delete {
+    display: none;
+    height: 24px;
 }
 
 .id {
@@ -52,10 +127,9 @@ option[value=""][disabled] {
 }
 
 .schedule {
-
+    text-align: center;
 }
 
-.delete {
-    display: none;
-    height: 24px;
+.status {
+    text-align: center;
 }

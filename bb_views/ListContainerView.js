@@ -10,6 +10,7 @@ var ListContainerView = SOCIView.extend({
 		this.collection.on('change', this.render, this);
 		this.collection.on('update', this.render, this);
 		this.collection.on('sort', this.render, this);
+		console.log(this.$el)
 	},
 
 	events: {
@@ -23,7 +24,7 @@ var ListContainerView = SOCIView.extend({
 		var pageOne = this.collection.slice(this.page * 5, this.page * 5 + this.pageLimit);
 		pageOne.forEach((post) => {
 			var itemView = new ListItemView({ model: post });
-			this.$el.append(itemView.render().el);
+			this.$el[0].children[2].append(itemView.render().el);
 		}, this);
 		return this;
 	},

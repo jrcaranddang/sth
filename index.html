@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
   <!-- Import your styles here -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <!-- -->
@@ -65,13 +64,17 @@
       <p>Status</p>
     </div>
 
-    <div class="footer">
-      <!-- Next page -->
-      <button class="previous">←</button>
-      <!-- Previous page -->
-      <button class="next">→</button>
-      <p>Page : <%- this.page + 1 %></p>
+    <div class="listContainer">
+      
     </div>
+
+    <div class="footer">
+      <p>Page : <%- this.page + 1 %></p>
+        <!-- Next page -->
+        <button class="previous">←</button>
+        <!-- Previous page -->
+        <button class="next">→</button>
+      </div>
   </script>
 
   <script type='text/template' id='ListItemView'>
@@ -110,18 +113,21 @@
     });
   </script>
 
-
-  <div class="pageHeader">
-    <h1>SOCi Takehome</h1>
-
-    <!-- Search by: -->
-    <div class="searchBar">
-      <input type="text">
-      <button>Search</button>
-    </div>
+  <div class="overlay">
   </div>
-  <div class="takehome_body">
-    <!-- Render your item list here -->
+  <div class="container">
+    <div class="pageHeader">
+      <!-- <h1>SOCi Takehome</h1> -->
+      <img class="logo" src="https://www.meetsoci.com/wp-content/themes/SOCi/images/SOCi_logo.svg" alt="">
+      <!-- Search by: -->
+      <div class="searchBar">
+        <input type="text">
+        <button>Search</button>
+      </div>
+    </div>
+    <div class="takehome_body">
+      <!-- Render your item list here -->
+    </div>
   </div>
 </body>
 </html>
