@@ -133,3 +133,9 @@ option[value=""][disabled] {
 .status {
     text-align: center;
 }
+
+.detailsContainer {
+    height: 500px;
+    width: 400px;
+    background: linear-gradient(to left, #a8e063, #56ab2f);
+}
