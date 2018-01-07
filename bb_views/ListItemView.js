@@ -47,6 +47,10 @@ var ListItemView = SOCIView.extend({
 
     details() {
         console.log("clicked");
+        let details = new ItemDetailsView({});
+        console.log(this.$el)
+        this.$el.append(details);
+
     }
 
 });
