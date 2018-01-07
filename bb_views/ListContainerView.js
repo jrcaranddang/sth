@@ -7,11 +7,15 @@ var ListContainerView = SOCIView.extend({
 	pageLimit: 5,
 
     initialize() {
+		this.collection.on('change', this.render, this);
+		this.collection.on('update', this.render, this);
+		this.collection.on('sort', this.render, this);
 	},
 
 	events: {
 	 'click .previous' : 'previousPage',
-	 'click .next' : 'nextPage'
+	 'click .next' : 'nextPage',
+	 'change select': 'sortPosts'
 	},
 	
 	render() {
@@ -31,6 +35,13 @@ var ListContainerView = SOCIView.extend({
 
 	nextPage() {
 		this.page++;
+		this.render();
+	},
+	
+	sortPosts(e) {
+		let field = e.currentTarget.value.split(" ")[0];
+		let direction = e.currentTarget.value.split(" ")[1];
+		this.collection.sortPosts(field, direction);
 		this.render();
 	}
 

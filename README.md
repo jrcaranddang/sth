@@ -51,9 +51,9 @@ o        - Next page
 o        - Previous page
         - Next/Previous buttons should be visible but appear disabled when not applicable (i.e., when on the first or last page)
     - Sort by:
-x        - `schedule` date (ascending and descending)
-x        - `created_at` date (ascending and descending)
-x        - `created_by_name` (ascending and descending)
+o        - `schedule` date (ascending and descending)
+o        - `created_at` date (ascending and descending)
+o        - `created_by_name` (ascending and descending)
     - Search by:
 x        - `message` text
 x        - `created_by_name`
@@ -73,5 +73,5 @@ o        - Some kind of indication of its approval status
             - The date/time the post the date was created
             - The name of the person who created the post
             - An indication of its approval status
-        - "Hover" on a list item should show a "delete" button
-            - "Click" on the delete button should remove the post from both the collection and the list.
+o        - "Hover" on a list item should show a "delete" button
+o            - "Click" on the delete button should remove the post from both the collection and the list.

@@ -6,7 +6,7 @@
     
 .ListItemView {
     display: grid;
-    grid-template-columns: 1rem 1fr 60px 130px 60px;
+    grid-template-columns: 1rem 1fr 60px 130px 60px auto;
     grid-gap: 20px;
 }
 
@@ -53,4 +53,9 @@ option[value=""][disabled] {
 
 .schedule {
 
+}
+
+.delete {
+    display: none;
+    height: 24px;
 }

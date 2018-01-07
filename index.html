@@ -23,21 +23,22 @@
   <script type='text/template' id='ListContainerView'>
     <div class="listHeader">
       <div class="sortBy">
-          <select  id="sortPost" name="postCategory">
-            <!-- Sort by: -->
-            <option value="" disabled selected>Sort By:</option>
-            <!-- `schedule` date (ascending and descending) -->
-            <option value="schedule">Schedule ↑</option>
-            <option value="schedule">Schedule ↓</option>
-            <!-- `created_at` date (ascending and descending) -->
-            <option value="created_at">Created At ↑</option>
-            <option value="created_at">Created At ↓</option>
-            <!-- `created_by_name` (ascending and descending) -->
-            <option value="created_by_name">Created By ↑</option>
-            <option value="created_by_name">Created By ↓</option>
-          </select>
+        <select  id="sortPost" name="postCategory">
+          <!-- Sort by: -->
+          <option value="" disabled selected>Sort By:</option>
+          <!-- `schedule` date (ascending and descending) -->
+          <option value="schedule ascending">Schedule ↑</option>
+          <option value="schedule descending">Schedule ↓</option>
+          <!-- `created_at` date (ascending and descending) -->
+          <option value="created_at ascending">Created At ↑</option>
+          <option value="created_at descending">Created At ↓</option>
+          <!-- `created_by_name` (ascending and descending) -->
+          <option value="created_by_name ascending">Created By ↑</option>
+          <option value="created_by_name descending">Created By ↓</option>
+        </select>
       </div>
-      <div class="spacer"></div>
+      <div class="spacer">
+      </div>
       <div class="total">
         <!-- Number of total list items -->
         <p>Total: <%- this.collection.total %></p>
@@ -66,7 +67,7 @@
 
     <div class="footer">
       <!-- Next page -->
-      <button class="previous" <% console.log(this) %>>←</button>
+      <button class="previous">←</button>
       <!-- Previous page -->
       <button class="next">→</button>
       <p>Page : <%- this.page + 1 %></p>
@@ -83,6 +84,10 @@
     <div class="schedule"><%- this.model.attributes.schedule %></div>
     <!-- Some kind of indication of its approval status -->
     <div class="status"><%- this.status %></div>
+    <!-- delete on hover -->
+    <button class="delete">
+      Delete
+    </button>
   </script>
   <!-- -->
 
@@ -102,16 +107,16 @@
 		  $('.takehome_body').append( new ListContainerView({
 			  collection: new ListItemCollection()
 		  }).render().el);
-	  });
+    });
   </script>
 
 
   <div class="pageHeader">
-    <h1>SOCi takehome</h1>
+    <h1>SOCi Takehome</h1>
 
     <!-- Search by: -->
     <div class="searchBar">
-      <input type="text" placeholder="">
+      <input type="text">
       <button>Search</button>
     </div>
   </div>
