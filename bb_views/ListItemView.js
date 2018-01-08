@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-var ListItemView = SOCIView.extend({
-    tagName: 'li',
-	template: _.template($('#ListItemView').text()),
-    className: 'ListItemView',
-
-    initialize: function() {
-        console.log(this.model);
-    }
-=======
 
 var ListItemView = SOCIView.extend({
 	template: _.template($('#ListItemView').text()),
@@ -68,5 +58,4 @@ var ListItemView = SOCIView.extend({
         console.log(this.el)
     }
 
->>>>>>> 705ecb2d5e461148f62856e140bc74dd96651170
 });

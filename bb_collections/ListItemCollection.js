@@ -152,9 +152,6 @@ var ListItemCollection = Backbone.Collection.extend({
 		this.total = this.TESTDATA.total;
 		this.posts = this.TESTDATA.posts;
 		this.reset(this.TESTDATA.posts);
-<<<<<<< HEAD
-		console.log(this.post);
-=======
 		// console.log(this.search());
 	},
 
@@ -190,7 +187,6 @@ var ListItemCollection = Backbone.Collection.extend({
 		console.log(_.sortBy(this.models, function(model){
 			return model.get(field);
 		}))
->>>>>>> 705ecb2d5e461148f62856e140bc74dd96651170
 	}
 
 });

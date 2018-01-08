@@ -2,16 +2,6 @@ var ListContainerView = SOCIView.extend({
 	tagName: 'ul',
 	template: _.template($('#ListContainerView').text()),
 	className: 'ListContainerView',
-<<<<<<< HEAD
-
-	render: function() {
-		this.collection.post.forEach(function(post) {
-			var itemView = new ListItemView({ model: post });
-			this.$el.append(itemView.render().el);
-		}, this);
-		return this;
-	}
-=======
 	page: 0,
 	pageLimit: 5,
 
@@ -55,5 +45,4 @@ var ListContainerView = SOCIView.extend({
 		this.render();
 	}
 
->>>>>>> 705ecb2d5e461148f62856e140bc74dd96651170
 });
