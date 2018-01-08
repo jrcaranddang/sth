@@ -1,6 +1,5 @@
 
 var ListContainerView = SOCIView.extend({
-	// tagName: 'ul',
 	template: _.template($('#ListContainerView').text()),
 	className: 'ListContainerView',
 	page: 0,

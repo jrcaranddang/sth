@@ -3,7 +3,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(100vh - 1rem);
+    min-height: calc(100vh - 1rem);
     display: flex;
     justify-content: center;
 }
@@ -11,8 +11,10 @@ body {
 .overlay {
     background-color: #0DFFF0;
     opacity: 0.30;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    height: 100%;
+    width: 100%;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -134,8 +136,12 @@ option[value=""][disabled] {
     text-align: center;
 }
 
+#ItemDetailsView {
+    position: absolute;
+    top: 0;
+}
+
 .detailsContainer {
-    height: 500px;
-    width: 400px;
-    background: linear-gradient(to left, #a8e063, #56ab2f);
+    align-self: center;
+    background-color: #56ab2f;
 }

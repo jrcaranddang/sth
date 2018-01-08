@@ -1,8 +1,7 @@
-
 var ItemDetailsView = SOCIView.extend({
-    // tagName: 'li',
-	template: _.template($('#ItemDetailsView').text()),
+	template: _.template($('#ItemDetailsView').html()),
     className: 'ItemDetailsView',
+    model: ItemDetailsModel,
     
     initialize() {
     },
@@ -11,7 +10,7 @@ var ItemDetailsView = SOCIView.extend({
     },
 
     render() {
-        this.$el.html( this.template(this.model.toJSON() ));
+        this.$el.html( this.template(this.model));
         return this;
     }
 

@@ -1,6 +1,5 @@
 
 var ListItemView = SOCIView.extend({
-    // tagName: 'li',
 	template: _.template($('#ListItemView').text()),
     className: 'ListItemView',
     
@@ -47,10 +46,16 @@ var ListItemView = SOCIView.extend({
 
     details() {
         console.log("clicked");
-        let details = new ItemDetailsView({});
-        console.log(this.$el)
-        this.$el.append(details);
-
+        this.$el[0].append(new ItemDetailsView({model: {
+            schedule: this.model.attributes.schedule,
+            network: this.model.attributes.network,
+            network_name: this.model.attributes.network_name,
+            network_thumb: this.model.attributes.network_thumb,
+            created_at: this.model.attributes.created_at,
+            created_by_name: this.model.attributes.created_by_name,
+            status: this.getStatus()
+        }}).render().el);
+        console.log(this.el)
     }
 
 });
