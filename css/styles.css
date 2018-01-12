@@ -48,6 +48,9 @@ body {
     border-radius: 10px 10px 0px 0px;
     background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);
     background: linear-gradient(to left, #a8e063, #56ab2f);
+    margin: -20px;
+    position: relative;
+    top: -20px;
 }
 
 .logo {
@@ -55,7 +58,7 @@ body {
     height: 50px;
 }
 
-.searchBar {
+.SearchView {
     display: flex;
     justify-content: center;
     align-items: center;
