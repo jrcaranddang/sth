@@ -64,7 +64,7 @@ o        - The date/time for which the post is scheduled
 o        - The network TYPE (i.e. facebook) for which the post is scheduled
 o        - Some kind of indication of its approval status
     - Should have the following interactions:
-        - "Click" on a list item should bring up a small dialog box showing:
+o        - "Click" on a list item should bring up a small dialog box showing:
             - The full message text
             - The date/time for which the post is scheduled
             - The network TYPE (i.e. facebook) for which the post is scheduled

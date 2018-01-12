@@ -1,8 +1,7 @@
-
 var ListItemView = SOCIView.extend({
 	template: _.template($('#ListItemView').text()),
     className: 'ListItemView',
-    
+
     initialize() {
         this.status = this.getStatus();
         this.model.on('change', this.render, this);
@@ -20,7 +19,7 @@ var ListItemView = SOCIView.extend({
         this.$el.html( this.template(this.model.toJSON() ));
         return this;
     },
-    
+
     getStatus() {
         if(this.model.attributes.customer_approved > 0 && this.model.attributes.manager_approved > 0) {
             return "approved";
@@ -46,16 +45,18 @@ var ListItemView = SOCIView.extend({
 
     details() {
         console.log("clicked");
-        this.$el[0].append(new ItemDetailsView({model: {
-            schedule: this.model.attributes.schedule,
-            network: this.model.attributes.network,
-            network_name: this.model.attributes.network_name,
-            network_thumb: this.model.attributes.network_thumb,
-            created_at: this.model.attributes.created_at,
-            created_by_name: this.model.attributes.created_by_name,
-            status: this.getStatus()
-        }}).render().el);
-        console.log(this.el)
+        this.$el[0].after(new ItemDetailsView({
+            model: {
+                schedule: this.model.attributes.schedule,
+                network: this.model.attributes.network,
+                network_name: this.model.attributes.network_name,
+                network_thumb: this.model.attributes.network_thumb,
+                created_at: this.model.attributes.created_at,
+                created_by_name: this.model.attributes.created_by_name,
+                status: this.getStatus()
+            }
+        }).render().el);
+        console.log(this.$el)
     }
 
 });

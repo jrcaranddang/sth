@@ -8,7 +8,7 @@ var ListContainerView = SOCIView.extend({
     initialize() {
 		this.collection.on('change', this.render, this);
 		this.collection.on('update', this.render, this);
-		this.collection.on('sort', this.render, this);
+		this.collection.bind('sort', this.render, this);
 		console.log(this.$el)
 	},
 

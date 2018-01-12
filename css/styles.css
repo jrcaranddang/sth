@@ -6,6 +6,8 @@ body {
     min-height: calc(100vh - 1rem);
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 .overlay {
@@ -30,6 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 45vh;
+    margin: 0;
     padding: 20px;
     background-color: #f6f6f6;
     color: #75bc39;
@@ -87,6 +90,10 @@ body {
     padding: 0.5rem;
 }
 
+.ListItemView:hover {
+    cursor: pointer;
+}
+
 .footer {
     display: flex;
     align-self: flex-end;
@@ -107,6 +114,10 @@ select {
     color: #75bc39;
 }
 
+select:hover, option:hover {
+    cursor: pointer;
+}
+
 option[value=""][disabled] {
     display: none;
 }
@@ -114,6 +125,10 @@ option[value=""][disabled] {
 .delete {
     display: none;
     height: 24px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .id {
@@ -136,12 +151,37 @@ option[value=""][disabled] {
     text-align: center;
 }
 
-#ItemDetailsView {
+.ItemDetailsView {
     position: absolute;
+    /* min-width: 500px; */
+    /* max-width: 90vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* top: 25%; */
+    height: 100vh;
     top: 0;
+    width: 100vw;
+    left: 0;
+    background-color: rgba(33, 33, 33, 0.7);
 }
 
 .detailsContainer {
-    align-self: center;
     background-color: #56ab2f;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    line-height: 2;
+    width: 500px;
+}
+
+.close {
+    width: 25px;
+    align-self: flex-end;
+}
+
+.close:hover {
+    cursor: pointer;
 }
