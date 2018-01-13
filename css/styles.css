@@ -113,6 +113,14 @@ body {
     margin: 0 0.25rem;
 }
 
+input.search {
+    width: 175px;
+}
+
+.search:focus {
+    box-shadow: 1px 3px 12px -2px rgba(33,33,33,0.75);
+}
+
 select {
     color: #75bc39;
 }
@@ -134,18 +142,6 @@ button:hover {
     cursor: pointer;
 }
 
-.id {
-
-}
-
-.message {
-
-}
-
-.network {
-
-}
-
 .schedule {
     text-align: center;
 }
@@ -156,12 +152,9 @@ button:hover {
 
 .ItemDetailsView {
     position: absolute;
-    /* min-width: 500px; */
-    /* max-width: 90vw; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* top: 25%; */
     height: 100vh;
     top: 0;
     width: 100vw;

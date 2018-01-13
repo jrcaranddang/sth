@@ -8,7 +8,7 @@ var ListContainerView = SOCIView.extend({
     initialize() {
 		this.collection.on('change', this.render, this);
 		this.collection.on('update', this.render, this);
-		this.collection.bind('sort', this.render, this);
+		this.collection.bind('change', this.render, this);
 		console.log(this.$el)
 	},
 
@@ -48,15 +48,9 @@ var ListContainerView = SOCIView.extend({
 
     search(e) {
         if(e.keyCode === 13) {
-            console.log("enter");
-            console.log(this.collection.models);
-            console.log(_.filter(this.collection.models, (model) => {
-				return model.attributes.message.search(e.currentTarget.value) !== -1 ? true : false, console.log(model.attributes.message.search(e.currentTarget.value) !== -1 ? true : false)
-			}));
-            console.log(this.collection.models.filter((model, i) => {
-				return model.attributes.message.search(e.currentTarget.value) !== -1 ? true : false, console.log(model.attributes.message.search(e.currentTarget.value) !== -1 ? true : false)
-			}));
-			
+			let query = e.currentTarget.value;
+			this.collection.search(query);
+			this.render();
         }
 	}
 	
