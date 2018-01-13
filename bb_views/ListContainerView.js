@@ -8,14 +8,15 @@ var ListContainerView = SOCIView.extend({
     initialize() {
 		this.collection.on('change', this.render, this);
 		this.collection.on('update', this.render, this);
-		this.collection.bind('sort', this.render, this);
+		this.collection.bind('change', this.render, this);
 		console.log(this.$el)
 	},
 
 	events: {
 	 'click .previous' : 'previousPage',
 	 'click .next' : 'nextPage',
-	 'change select': 'sortPosts'
+	 'change select': 'sortPosts',
+	 "keypress .search": "search"
 	},
 	
 	render() {
@@ -23,7 +24,7 @@ var ListContainerView = SOCIView.extend({
 		var pageOne = this.collection.slice(this.page * 5, this.page * 5 + this.pageLimit);
 		pageOne.forEach((post) => {
 			var itemView = new ListItemView({ model: post });
-			this.$el[0].children[2].append(itemView.render().el);
+			this.$el[0].children[3].append(itemView.render().el);
 		}, this);
 		return this;
 	},
@@ -43,6 +44,14 @@ var ListContainerView = SOCIView.extend({
 		let direction = e.currentTarget.value.split(" ")[1];
 		this.collection.sortPosts(field, direction);
 		this.render();
-	}
+	},
 
+    search(e) {
+        if(e.keyCode === 13) {
+			let query = e.currentTarget.value;
+			this.collection.search(query);
+			this.render();
+        }
+	}
+	
 });

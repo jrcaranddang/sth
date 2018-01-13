@@ -20,6 +20,12 @@
 
   <!-- Add your Backbone View templates here -->
   <script type='text/template' id='ListContainerView'>
+    <div class="pageHeader">
+      <img class="logo" src="https://www.meetsoci.com/wp-content/themes/SOCi/images/SOCi_logo.svg" alt="SOCi Takehome">
+      <div class="SearchView">
+        <input type="text" class="search" placeholder="search by message or author">
+      </div>
+  </div>
     <div class="listHeader">
       <div class="sortBy">
         <select  id="sortPost" name="postCategory">
@@ -126,21 +132,14 @@
 		  // Instantiate and render your Backbone views from here
 		  $('.takehome_body').append( new ListContainerView({
 			  collection: new ListItemCollection()
-		  }).render().el);
+      }).render().el);
+      // $('.pageHeader').append( new SearchView().render().el);
     });
   </script>
 
   <div class="overlay">
   </div>
   <div class="container">
-    <div class="pageHeader">
-      <img class="logo" src="https://www.meetsoci.com/wp-content/themes/SOCi/images/SOCi_logo.svg" alt="SOCi Takehome">
-      <!-- Search by: -->
-      <div class="searchBar">
-        <input type="text" class="searchInput">
-        <button>Search</button>
-      </div>
-    </div>
     <div class="takehome_body">
       <!-- Render your item list here -->
     </div>

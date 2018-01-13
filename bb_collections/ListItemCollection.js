@@ -173,8 +173,8 @@ var ListItemCollection = Backbone.Collection.extend({
 		});
 	},
 
-	sortPosts(field, direction){
-		sorted = _.sortBy(this.models, function(model){
+	sortPosts(field, direction) {
+		let sorted = _.sortBy(this.models, function(model){
 			return model.get(field);
 		});
 
@@ -187,6 +187,13 @@ var ListItemCollection = Backbone.Collection.extend({
 		console.log(_.sortBy(this.models, function(model){
 			return model.get(field);
 		}))
+	},
+
+	search(query) {
+		this.reset(this.posts);
+		this.models = _.filter(this.models, (model) => {
+			return model.attributes.message.search(query) !== -1 || model.attributes.created_by_name.search(query) !== -1;
+		});
 	}
 
 });
