@@ -11,7 +11,6 @@ var ListContainerView = SOCIView.extend({
 		this.collection.on('change', this.render, this);
 		this.collection.on('update', this.render, this);
 		this.collection.bind('change', this.render, this);
-		console.log(this.collection)
 		this.currentPage = this.currentPage;
 		this.pageLimit = this.pageLimit,
 		this.firstPage = this.firstPage,
@@ -33,7 +32,6 @@ var ListContainerView = SOCIView.extend({
 			var itemView = new ListItemView({ model: post });
 			this.$el[0].children[3].append(itemView.render().el);
 		}, this);
-		console.log(this);
 		this.disablePageCtrl();
 		return this;
 	},

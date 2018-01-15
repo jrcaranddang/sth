@@ -4,8 +4,6 @@ var ItemDetailsView = SOCIView.extend({
     model: ItemDetailsModel,
     
     initialize() {
-        console.log(this.model);
-        // this.model.on('destroy', this.remove, this);
     },
 
     events: {

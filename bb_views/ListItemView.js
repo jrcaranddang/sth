@@ -44,7 +44,6 @@ var ListItemView = SOCIView.extend({
     },
 
     details() {
-        console.log("clicked");
         this.$el[0].after(new ItemDetailsView({
             model: {
                 schedule: this.model.attributes.schedule,
@@ -56,7 +55,6 @@ var ListItemView = SOCIView.extend({
                 status: this.getStatus()
             }
         }).render().el);
-        console.log(this.$el)
     }
 
 });

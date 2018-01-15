@@ -85,7 +85,7 @@ body {
 .listContainer {
     min-height: 27vh;
 }
-    
+
 .ListItemView {
     display: grid;
     grid-template-columns: 1rem 1fr 60px 130px 60px auto;
@@ -112,7 +112,7 @@ body {
     height: 100%;
     margin: 0 0.25rem;
 }
-
+/* Search Styles */
 input.search {
     width: 175px;
 }
@@ -120,7 +120,7 @@ input.search {
 .search:focus {
     box-shadow: 1px 3px 12px -2px rgba(33,33,33,0.75);
 }
-
+/* Sort Styles */
 select {
     color: #75bc39;
 }
@@ -132,20 +132,12 @@ select:hover, option:hover {
 option[value=""][disabled] {
     display: none;
 }
-
+/* Delete Styles */
 .delete {
     display: none;
     height: 24px;
 }
-
-button:hover {
-    cursor: pointer;
-}
-
-button:hover[disabled] {
-    cursor: default;
-}
-
+/* List Item Styles */
 .schedule {
     text-align: center;
 }
@@ -153,7 +145,7 @@ button:hover[disabled] {
 .status {
     text-align: center;
 }
-
+/* ItemDetailsView Styles */
 .ItemDetailsView {
     position: absolute;
     display: flex;
@@ -176,7 +168,7 @@ button:hover[disabled] {
     line-height: 2;
     width: 500px;
 }
-
+/* detailsView close button */
 .close {
     width: 25px;
     align-self: flex-end;
@@ -184,4 +176,13 @@ button:hover[disabled] {
 
 .close:hover {
     cursor: pointer;
+}
+
+/* General Styles */
+button:hover {
+    cursor: pointer;
+}
+
+button:hover[disabled] {
+    cursor: default;
 }
