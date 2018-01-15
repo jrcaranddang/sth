@@ -30,7 +30,7 @@
 - General data about the list should be shown somewhere in the container:
 
 <!-- Post total & aproval status totals (30 minutes) -->
-- Display totals  (30 minutes)
+- Display totals  **(30 minutes)**
     - Number of total list items
     - Number of "approved" posts
         - These are posts with `customer_approved` and `manager_approved` values equal to 1
@@ -44,19 +44,19 @@
 
     <!-- Pagination (2 hours) -->
     - Page limit of 5 items
-    - Paging controls:  (2 hours)
+    - Paging controls:  **(2 hours)**
         - Next page
         - Previous page
         - Next/Previous buttons should be visible but appear disabled when not applicable (i.e., when on the first or last page)
 
     <!-- Sort (4 hours) -->
-    - Sort by:  (4 hours)
+    - Sort by:  **(4 hours)**
         - `schedule` date (ascending and descending)
         - `created_at` date (ascending and descending)
         - `created_by_name` (ascending and descending)
 
     <!-- Search (4 hours) -->
-    - Search by:  (4 hours)
+    - Search by:  **(4 hours)**
         - `message` text
         - `created_by_name`
 
@@ -64,7 +64,7 @@
 - Scheduled Post List Items:
 
     <!-- List display (4 hours) -->
-    - Should display at least the following information:  (4 hours)
+    - Should display at least the following information:  **(4 hours)**
         - A single-line snippet of the message text
         - The date/time for which the post is scheduled
         - The network TYPE (i.e. facebook) for which the post is scheduled
@@ -72,7 +72,7 @@
 
     - Should have the following interactions:
         <!-- Click Event + Details View (4 hours) -->
-        - "Click" on a list item should bring up a small dialog box showing:  (4 hours)
+        - "Click" on a list item should bring up a small dialog box showing:  **(4 hours)**
             - The full message text
             - The date/time for which the post is scheduled
             - The network TYPE (i.e. facebook) for which the post is scheduled
@@ -83,7 +83,7 @@
             - An indication of its approval status
 
         <!-- Hover Event + Delete button (2 hours) -->
-        - "Hover" on a list item should show a "delete" button  (2 hours)
+        - "Hover" on a list item should show a "delete" button  **(2 hours)**
             - "Click" on the delete button should remove the post from both the collection and the list.
 
 ### TODOs ###
