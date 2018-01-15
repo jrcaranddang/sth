@@ -150,26 +150,24 @@ var ListItemCollection = Backbone.Collection.extend({
 
 	initialize(models, options) {
 		this.total = this.TESTDATA.total;
-		this.posts = this.TESTDATA.posts;
 		this.reset(this.TESTDATA.posts);
-		// console.log(this.search());
 	},
 
-	approved(posts) {
-		return posts.filter((post) => {
-			return post.customer_approved > 0 && post.manager_approved > 0;
+	approved(models) {
+		return models.filter((model) => {
+			return model.attributes.customer_approved > 0 && model.attributes.manager_approved > 0;
 		});
 	},
 
-	pending(posts) {
-		return posts.filter((post) => {
-			return post.customer_approved == 0 || post.manager_approved == 0;
+	pending(models) {
+		return models.filter((model) => {
+			return model.attributes.customer_approved == 0 || model.attributes.manager_approved == 0;
 		});
 	},
 
-	rejected(posts) {
-		return posts.filter((post) => {
-			return post.customer_approved === -1 || post.manager_approved === -1;
+	rejected(models) {
+		return models.filter((model) => {
+			return model.attributes.customer_approved === -1 || model.attributes.manager_approved === -1;
 		});
 	},
 
@@ -183,10 +181,6 @@ var ListItemCollection = Backbone.Collection.extend({
 		}
 
 		this.models = sorted;
-		console.log(field)
-		console.log(_.sortBy(this.models, function(model){
-			return model.get(field);
-		}))
 	},
 
 	search(query) {
